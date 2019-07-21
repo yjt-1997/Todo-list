@@ -10,13 +10,13 @@
     <div>
       <ul id="filters">
         <li>
-          <a href="#">ALL</a>
+          <a href="#" @click="displayAll">ALL</a>
         </li>
         <li>
-          <a href="#">Active</a>
+          <a href="#" @click="displayActived">Active</a>
         </li>
         <li>
-          <a href="#">Complete</a>
+          <a href="#" @click="displayCompleted">Complete</a>
         </li>
       </ul>
     </div>
@@ -33,13 +33,25 @@ export default {
   data() {
     return {
       items: [],
+      itemsBackup: [],
       item: ""
     };
   },
   methods: {
     addItem() {
-      this.items.push({ content: this.item });
+      let temp = { content: this.item, isCompleted: false };
+      this.items.push(temp);
+      this.itemsBackup.push(temp);
       this.item = "";
+    },
+    displayAll() {
+      this.items = this.itemsBackup;
+    },
+    displayActived() {
+      this.items = this.itemsBackup.filter(item => item.isCompleted == false);
+    },
+    displayCompleted() {
+      this.items = this.itemsBackup.filter(item => item.isCompleted == true);
     }
   }
 };
