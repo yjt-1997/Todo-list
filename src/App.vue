@@ -4,9 +4,9 @@
     <p>
       <em>Simple Todo List with adding and filter by diff status.</em>
     </p>
-    <input type="text" />
-    <button>Add</button>
-    <List></List>
+    <input type="text" v-model="item" />
+    <button @click="addItem">Add</button>
+    <List :items="items"></List>
     <div>
       <ul id="filters">
         <li>
@@ -29,6 +29,18 @@ export default {
   name: "app",
   components: {
     List
+  },
+  data() {
+    return {
+      items: [],
+      item: ""
+    };
+  },
+  methods: {
+    addItem() {
+      this.items.push({ content: this.item });
+      this.item = "";
+    }
   }
 };
 </script>
