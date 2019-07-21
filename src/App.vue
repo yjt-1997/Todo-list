@@ -4,9 +4,22 @@
     <p>
       <em>Simple Todo List with adding and filter by diff status.</em>
     </p>
-    <input type="text"><button>Add</button>
+    <input type="text" />
+    <button>Add</button>
     <List></List>
-    <a href="#">ALL</a>&nbsp;<a href="#">Active</a>&nbsp;<a href="#">Complete</a>
+    <div>
+      <ul id="filters">
+        <li>
+          <a href="#">ALL</a>
+        </li>
+        <li>
+          <a href="#">Active</a>
+        </li>
+        <li>
+          <a href="#">Complete</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -21,12 +34,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./css/app.css");
 </style>

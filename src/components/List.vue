@@ -1,9 +1,23 @@
 <template>
   <div>
     <ol>
-      <li class>
+      <li>
         <input name="todo-list" type="checkbox" class="todo-list" />
-        <span>123</span>
+        <span>
+          <s>123</s>
+        </span>
+      </li>
+      <li>
+        <input name="todo-list" type="checkbox" class="todo-list" />
+        <span>456</span>
+      </li>
+      <li>
+        <input name="todo-list" type="checkbox" class="todo-list" />
+        <span>789</span>
+      </li>
+      <li>
+        <input name="todo-list" type="checkbox" class="todo-list" />
+        <span>1011</span>
       </li>
     </ol>
   </div>
