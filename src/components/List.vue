@@ -14,10 +14,10 @@ export default {
   components: {
     Item
   },
-  data() {
-    return {
-      items: this.$store.getters.getAllItems,
-    };
+  computed: {
+    items() {
+      return this.$store.state.toDisplayItems;
+    }
   }
 };
 </script>

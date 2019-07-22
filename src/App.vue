@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <AddItem @toAddItem="initItem"></AddItem>
+    <AddItem></AddItem>
     <List :items="items"></List>
     <Filters @clickFilter="display"></Filters>
   </div>
@@ -26,9 +26,6 @@ export default {
     };
   },
   methods: {
-    initItem(item) {
-      this.items = this.$store.getters.getAllItems;
-    },
     display(filterItems) {
       this.items = filterItems;
     }

@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     update() {
-      this.$store.commit(this.item.id);
+      this.$store.commit('update',this.item.id);
     }
   }
 };
