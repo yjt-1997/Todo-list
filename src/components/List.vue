@@ -14,8 +14,10 @@ export default {
   components: {
     Item
   },
-  props: {
-    items: Array
+  data() {
+    return {
+      items: this.$store.getters.getAllItems,
+    };
   }
 };
 </script>

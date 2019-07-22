@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     addItem() {
-      this.$emit("toAddItem", { content: this.item, isCompleted: false });
+      this.$store.commit("addItem", { content: this.item, isCompleted: false });
       this.item = "";
     }
   }

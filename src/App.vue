@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
-    <AddItem @toAddItem="addItem"></AddItem>
+    <AddItem @toAddItem="initItem"></AddItem>
     <List :items="items"></List>
-    <Filters :items="itemsBackup" @clickFilter="display"></Filters>
+    <Filters @clickFilter="display"></Filters>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import Header from "./components/Header";
 import AddItem from "./components/AddItem";
 import List from "./components/List";
-import Filters from './components/Filters'
+import Filters from "./components/Filters";
 export default {
   name: "app",
   components: {
@@ -22,14 +22,12 @@ export default {
   },
   data() {
     return {
-      items: [],
-      itemsBackup: [],
+      items: []
     };
   },
   methods: {
-    addItem(item) {
-      this.items.push(item);
-      this.itemsBackup.push(item);
+    initItem(item) {
+      this.items = this.$store.getters.getAllItems;
     },
     display(filterItems) {
       this.items = filterItems;

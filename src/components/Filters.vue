@@ -16,23 +16,14 @@
 <script>
 export default {
   name: "Filters",
-  props: {
-    items: Array
-  },
   methods: {
     display(flag) {
       if (flag == "All") {
-        this.$emit("clickFilter", this.items);
+        this.$emit("clickFilter", this.$store.getters.getAllItems);
       } else if (flag == "Actived") {
-        this.$emit(
-          "clickFilter",
-          this.items.filter(item => item.isCompleted == false)
-        );
+        this.$emit("clickFilter", this.$store.getters.getActiveItems);
       } else {
-        this.$emit(
-          "clickFilter",
-          this.items.filter(item => item.isCompleted == true)
-        );
+        this.$emit("clickFilter", this.$store.getters.getCompletedItems);
       }
     }
   }
