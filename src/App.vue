@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <input type="text" v-model="item" />
-    <button @click="addItem">Add</button>
+    <AddItem @toAddItem="addItem"></AddItem>
     <List :items="items"></List>
     <div>
       <ul id="filters">
@@ -22,26 +21,25 @@
 
 <script>
 import Header from "./components/Header";
+import AddItem from "./components/AddItem";
 import List from "./components/List";
 export default {
   name: "app",
   components: {
     List,
-    Header
+    Header,
+    AddItem
   },
   data() {
     return {
       items: [],
       itemsBackup: [],
-      item: ""
     };
   },
   methods: {
-    addItem() {
-      let temp = { content: this.item, isCompleted: false };
-      this.items.push(temp);
-      this.itemsBackup.push(temp);
-      this.item = "";
+    addItem(item) {
+      this.items.push(item);
+      this.itemsBackup.push(item);
     },
     display(flag) {
       if (flag == "All") {
