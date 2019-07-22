@@ -2,8 +2,8 @@
   <div id="app">
     <Header></Header>
     <AddItem></AddItem>
-    <List :items="items"></List>
-    <Filters @clickFilter="display"></Filters>
+    <List></List>
+    <Filters></Filters>
   </div>
 </template>
 
@@ -20,16 +20,6 @@ export default {
     AddItem,
     Filters
   },
-  data() {
-    return {
-      items: []
-    };
-  },
-  methods: {
-    display(filterItems) {
-      this.items = filterItems;
-    }
-  }
 };
 </script>
 

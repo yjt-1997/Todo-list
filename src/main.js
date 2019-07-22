@@ -14,22 +14,23 @@ const store = new Vuex.Store({
         getDisplayItems: state => state.toDisplayItems,
         getAllItems: state => {
             state.toDisplayItems = state.items;
-            return state.toDisplayItems;
+            state.toDisplayItems.splice(0, 0);
         },
         getActiveItems: state => {
             state.toDisplayItems = state.items.filter(item => !item.isCompleted);
-            return state.toDisplayItems;
+            state.toDisplayItems.splice(0, 0);
         },
         getCompletedItems: state => {
             state.toDisplayItems = state.items.filter(item => item.isCompleted);
-            return state.toDisplayItems;
+            state.toDisplayItems.splice(0, 0);
         }
+
     },
     mutations: {
         addItem(state, item) {
             item.id = state.items.length + 1;
             state.items.push(item);
-            state.toDisplayItems = state.items;
+            state.toDisplayItems.push(item);
         },
         update(state, id) {
             let item = state.items.filter(item => item.id == id);

@@ -19,11 +19,11 @@ export default {
   methods: {
     display(flag) {
       if (flag == "All") {
-        this.$emit("clickFilter", this.$store.getters.getAllItems);
+        this.$store.getters.getAllItems;
       } else if (flag == "Actived") {
-        this.$emit("clickFilter", this.$store.getters.getActiveItems);
+        this.$store.getters.getActiveItems;
       } else {
-        this.$emit("clickFilter", this.$store.getters.getCompletedItems);
+        this.$store.getters.getCompletedItems;
       }
     }
   }
