@@ -14,7 +14,8 @@ export default {
   },
   methods: {
     addItem() {
-      this.$emit("toAddItem",{ content: this.item, isCompleted: false });
+      this.$emit("toAddItem", { content: this.item, isCompleted: false });
+      this.item = "";
     }
   }
 };
