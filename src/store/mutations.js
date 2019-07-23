@@ -11,5 +11,8 @@ export const mutations = {
         } else {
             state.toDisplayItems = state.items.filter(item => item.isCompleted);
         }
+    },
+    addUserName: (state, name) => {
+        state.name = name;
     }
 }
