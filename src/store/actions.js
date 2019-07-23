@@ -10,5 +10,8 @@ export const actions = {
     },
     updateItem(context, data) {
         axios.put(`${baseUrl}/${data.id}`, data).then(() => this.dispatch('getList'));
-    }
+    },
+    deleteItem(context, data) {
+        axios.delete(`${baseUrl}/${data.id}`, data).then(() => this.dispatch('getList'));
+    },
 }

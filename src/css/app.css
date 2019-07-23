@@ -19,7 +19,7 @@ input[type=text] {
     width: 75%;
 }
 
-button {
+#addBtn {
     height: 31px;
     display: inline-block;
     width: 18%;
