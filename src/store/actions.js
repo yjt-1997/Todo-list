@@ -6,6 +6,9 @@ export const actions = {
         axios.get(baseUrl).then(response => commit('reloadItems', response.data));
     },
     addItem(context, data) {
-        axios.post(baseUrl, data).then(response => this.dispatch('getList'));
+        axios.post(baseUrl, data).then(() => this.dispatch('getList'));
+    },
+    updateItem(context, data) {
+        axios.put(`${baseUrl}/${data.id}`, data).then(() => this.dispatch('getList'));
     }
 }

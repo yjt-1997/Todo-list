@@ -12,7 +12,12 @@ export default {
   },
   methods: {
     update() {
-      this.$store.commit("update", this.item.id);
+      //this.$store.commit("update", this.item.id);
+      this.$store.dispatch("updateItem", {
+        id: this.item.id,
+        content: this.item.content,
+        isCompleted: this.item.isCompleted
+      });
     }
   }
 };
