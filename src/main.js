@@ -10,22 +10,6 @@ const store = new Vuex.Store({
         items: [],
         toDisplayItems: [],
     },
-    getters: {
-        getDisplayItems: state => state.toDisplayItems,
-        getAllItems: state => {
-            state.toDisplayItems = state.items;
-            state.toDisplayItems.splice(0, 0);
-        },
-        getActiveItems: state => {
-            state.toDisplayItems = state.items.filter(item => !item.isCompleted);
-            state.toDisplayItems.splice(0, 0);
-        },
-        getCompletedItems: state => {
-            state.toDisplayItems = state.items.filter(item => item.isCompleted);
-            state.toDisplayItems.splice(0, 0);
-        }
-
-    },
     mutations: {
         addItem(state, item) {
             item.id = state.items.length + 1;
@@ -35,6 +19,15 @@ const store = new Vuex.Store({
         update(state, id) {
             let item = state.items.filter(item => item.id == id);
             item.isCompleted = !item.isCompleted;
+        },
+        updateDisplayItems(state, flag) {
+            if (flag == "All") {
+                state.toDisplayItems = state.items;
+            } else if (flag == "Actived") {
+                state.toDisplayItems = state.items.filter(item => !item.isCompleted);
+            } else {
+                state.toDisplayItems = state.items.filter(item => item.isCompleted);
+            }
         }
     }
 })

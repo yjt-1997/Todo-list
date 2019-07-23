@@ -18,13 +18,7 @@ export default {
   name: "Filters",
   methods: {
     display(flag) {
-      if (flag == "All") {
-        this.$store.getters.getAllItems;
-      } else if (flag == "Actived") {
-        this.$store.getters.getActiveItems;
-      } else {
-        this.$store.getters.getCompletedItems;
-      }
+      this.$store.commit("updateDisplayItems", flag);
     }
   }
 };
