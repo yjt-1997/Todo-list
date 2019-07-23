@@ -1,4 +1,8 @@
 export const mutations = {
+    reloadItems: (state, newItems) => {
+        state.items = newItems;
+        state.toDisplayItems = newItems;
+    },
     addItem: (state, item) => {
         item.id = state.items.length + 1;
         state.items.push(item);

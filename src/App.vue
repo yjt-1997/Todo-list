@@ -20,6 +20,9 @@ export default {
     AddItem,
     Filters
   },
+  mounted() {
+    this.$store.dispatch("getList");
+  }
 };
 </script>
 
