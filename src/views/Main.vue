@@ -3,7 +3,7 @@
     <input type="text" v-model="userName" placeholder="请输入姓名" />
     <br />
     <br />
-    <button @click="login">开始使用</button>
+    <a-button type="primary" @click="login">开始使用</a-button>
   </div>
 </template>
 <script>
