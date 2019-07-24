@@ -11,10 +11,10 @@ export default {
   name: "Main",
   computed: {
     getLoginUser: function() {
-      return this.$store.state.name;
+      return this.$store.state.user.name;
     },
     getUserPhone: function() {
-      return this.$store.state.phone;
+      return this.$store.state.user.phone;
     }
   }
 };

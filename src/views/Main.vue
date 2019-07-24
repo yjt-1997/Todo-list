@@ -7,6 +7,7 @@
   </div>
 </template>
 <script>
+import mutationsType from "../store/user/mutationsType";
 export default {
   name: "Main",
   data() {
@@ -16,7 +17,7 @@ export default {
   },
   methods: {
     login() {
-      this.$store.commit("addUserName", this.userName);
+      this.$store.commit(mutationsType.ADD_USER_NAME, this.userName);
       this.$router.push({ path: "/home" });
     }
   }

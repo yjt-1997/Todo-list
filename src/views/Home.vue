@@ -1,7 +1,6 @@
 <template>
   <div>
     <div>
-      姓名：{{getLoginUser}}
       <ol>
         <li>
           <a href="/" onclick="return confirm('确认返回吗')">返回</a>
@@ -25,7 +24,7 @@ export default {
   name: "Main",
   computed: {
     getLoginUser: function() {
-      return this.$store.state.name;
+      return this.$store.state.user.name;
     }
   }
 };

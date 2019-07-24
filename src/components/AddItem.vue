@@ -14,7 +14,10 @@ export default {
   },
   methods: {
     addItem() {
-      this.$store.dispatch("addItem", { content: this.item, isCompleted: false });
+      this.$store.dispatch("addItem", {
+        content: this.item,
+        isCompleted: false
+      });
       this.item = "";
     }
   }

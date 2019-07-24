@@ -1,11 +1,10 @@
+import mutationsType from './mutationsType'
+
 export const mutations = {
-    reloadItems: (state, newItems) => {
+    [mutationsType.RE_LOAD_ITEMS]: (state, newItems) => {
         state.items = newItems;
     },
-    updateStatus: (state, status) => {
-        state.status = status;
-    },
-    addUserName: (state, name) => {
-        state.name = name;
+    [mutationsType.UPDATE_STATUS]: (state, newStatus) => {
+        state.status = newStatus;
     }
 }

@@ -14,11 +14,15 @@
   </div>
 </template>
 <script>
+import mutationsType from "../store/items/mutationsType";
 export default {
   name: "Filters",
   methods: {
     display(status) {
-      this.$store.commit("updateStatus", status);
+      console.log(mutationsType.UPDATE_STATUS);
+      console.log(status);
+      this.$store.commit(mutationsType.UPDATE_STATUS, status);
+      console.log(this.$store.state.items.status);
     }
   }
 };
