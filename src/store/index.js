@@ -1,16 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VueRouter from "vue-router";
-import { state } from './state'
-import { getters } from './getters'
-import { mutations } from './mutations'
-import { actions } from './actions'
+import { items } from './items/index'
+import { user } from './user/index'
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
-    state,
-    getters,
-    mutations,
-    actions
+    modules: {
+        items,
+        user
+    }
 })
