@@ -19,10 +19,7 @@ export default {
   name: "Filters",
   methods: {
     display(status) {
-      console.log(mutationsType.UPDATE_STATUS);
-      console.log(status);
       this.$store.commit(mutationsType.UPDATE_STATUS, status);
-      console.log(this.$store.state.items.status);
     }
   }
 };
