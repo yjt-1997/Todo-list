@@ -14,7 +14,7 @@ const routes = [
         children: [
             { path: '/', redirect: '/TodoList' },
             { path: '/TodoList', component: TodoList },
-            { path: '/mine', component: Mine }
+            { path: '/Mine', component: Mine }
         ]
     },
 

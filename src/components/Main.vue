@@ -9,6 +9,11 @@
 <script>
 export default {
   name: "Main",
+  data() {
+    return {
+      userName: ""
+    };
+  },
   methods: {
     login() {
       this.$store.commit("addUserName", this.userName);
