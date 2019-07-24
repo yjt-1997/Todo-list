@@ -1,9 +1,11 @@
 <template>
-  <div style="text-align:center;">
-    <input type="text" v-model="userName" placeholder="请输入姓名" />
-    <br />
-    <br />
-    <a-button type="primary" @click="login">开始使用</a-button>
+  <div>
+    <div style="margin-top:300px;margin-left:300px;">
+      <a-avatar style="margin-left:45%;margin-bottom:50px;" size="large" icon="user" />
+      <a-input placeholder="请输入姓名" v-model="userName"/>
+       <!-- <a-input-search placeholder="请输入姓名" @search="login" enterButton="开始使用" size="large" /> -->
+      <a-button type="primary" @click="login">开始使用</a-button>
+    </div>
   </div>
 </template>
 <script>
