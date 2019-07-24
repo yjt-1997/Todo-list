@@ -17,8 +17,8 @@
 export default {
   name: "Filters",
   methods: {
-    display(flag) {
-      this.$store.commit("updateDisplayItems", flag);
+    display(status) {
+      this.$store.commit("updateStatus", status);
     }
   }
 };

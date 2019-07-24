@@ -1,6 +1,6 @@
 export const state = {
     items: [],
-    toDisplayItems: [],
+    status: "All",
     name: "Young",
     phone: "13312341234"
 }
