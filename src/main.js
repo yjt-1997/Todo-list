@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { store } from './store/index'
 import router from './router'
+import { store } from './store/index'
 
+//定义全局变量
 Vue.config.productionTip = false
 
 new Vue({
